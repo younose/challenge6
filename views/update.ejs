@@ -1,0 +1,18 @@
+<td><%= post.username %></td>
+      <td><%= post.password %></td>
+
+      <h1>ADD User</h1>
+      <form action="/posts" method="post">
+        <div class="mb-3">
+          <label for="titlePost" class="form-label">Username</label>
+          <input class="form-control" type="text" name="username" />
+        </div>
+        <div class="mb-3">
+          <label for="postBody" class="form-label">Password</label>
+          <input class="form-control" type="text" name="password" />
+          <br />
+        </div>
+        <div class="mb-3">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>

@@ -1,0 +1,50 @@
+<%- include('partials/header'); -%>
+
+<table class="table caption-top">
+  <caption>
+    List of users
+  </caption>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">username</th>
+      <th scope="col">password</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Hapus</th>
+      <th scope="col">Biodata</th>
+      <th scope="col">History</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% let no = 0;%> 
+    <% a.forEach(function(post){ %>
+    <tr>
+      <%no++%>
+      <th scope="row"><%=no%></th>
+      <td><%= post.username %></td>
+      <td><%= post.password %></td>
+      <td><a href="/edit/<%= post.id %>">Edit</a></td>
+      <th scope="col"><a href="/delete/<%= post.id %>">Hapus</a></th>
+      <th scope="col"><a href="/biodata/<%= post.id %>">Biodata</a></th>
+      <th scope="col"><a href="/history/<%= post.id %>">History</a></th>
+    </tr>
+    <% }); %>
+  </tbody>
+</table>
+
+<h1>ADD User</h1>
+<form action="/" method="post">
+  <div class="mb-3">
+    <label for="titlePost" class="form-label">Username</label>
+    <input class="form-control" type="text" name="username" />
+  </div>
+  <div class="mb-3">
+    <label for="postBody" class="form-label">Password</label>
+    <input class="form-control" type="text" name="password" />
+    <br />
+  </div>
+  <div class="mb-3">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+<%- include('partials/footer'); -%>
